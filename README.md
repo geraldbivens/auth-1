@@ -1,6 +1,6 @@
 # README
 
-Create a new user with a secure password:
+Steps to create a new user with a secure password:
 
 * Create a new rails api `rails new auth-1 --api`
 
