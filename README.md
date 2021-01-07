@@ -8,7 +8,7 @@ Create a new user with a secure password:
 
 * Create a User resource `rails g resource User username password`
 
-* Add the 'digest' attribute to the password column in the users table `password_digest`, then migrate the database `rails db:migrate`
+* Add the `password_digest` attribute to the password column in the users table, then migrate the database `rails db:migrate`
 
 * Add a route to create a new user
 ```
@@ -31,11 +31,11 @@ class UsersController < ApplicationController
 end
 ```
 
-* Add the secure password macro to the User model
+* Add the `has_secure_password` macro to the User model
 ```
 class User < ApplicationRecord
     has_secure_password
 end
 ```
 
-* Open the Postman browser and test to see if you can create a new user with a hashed password
+* Open the Postman browser and test to see if you can create a new user with a secure password
