@@ -10,7 +10,12 @@ Create a new user with a secure password:
 
 * Add the 'digest' attribute to the password column in the users table `password_digest`, then migrate the database `rails db:migrate`
 
-* Add a route to create a new user `resources :users, only: [:create]`
+* Add a route to create a new user
+```
+Rails.application.routes.draw do
+  resources :users, only: [:create]
+end
+```
 
 * Add a create action to create a new user
 ```
@@ -26,7 +31,7 @@ class UsersController < ApplicationController
 end
 ```
 
-* Add the secure password macro to the User model `has_secure_password`
+* Add the secure password macro to the User model
 ```
 class User < ApplicationRecord
     has_secure_password
